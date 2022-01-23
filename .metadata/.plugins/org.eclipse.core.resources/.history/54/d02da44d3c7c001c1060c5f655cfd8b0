@@ -1,0 +1,42 @@
+package LockedMe.com;
+
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class FileWriteDemo {
+
+	 static final String folderPath="E:\\My File Folder";
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		addNewFile();
+
+	}
+	
+	
+	private static void addNewFile() {
+	    Scanner sc=new Scanner(System.in);
+		String fName;
+		int noOfLines=0;
+		try {
+		System.out.println("Enter The file name first : ");
+		fName=sc.nextLine();
+		FileWriter fw=new FileWriter(folderPath+"\\"+fName);
+		
+		System.out.println("Enter How many lines you want to write :");
+		noOfLines=sc.nextInt();
+		
+		for(int i=1;i<=noOfLines;i++) {
+		System.out.println("Enter The Message to write into the file ");
+		fw.write(sc.nextLine());
+		}
+		System.out.println("\n FIle Created and saved  Successfully");
+		
+	      }catch(Exception ex) {
+			System.out.println("errorMsg");	
+			}
+		
+   }
+
+}
