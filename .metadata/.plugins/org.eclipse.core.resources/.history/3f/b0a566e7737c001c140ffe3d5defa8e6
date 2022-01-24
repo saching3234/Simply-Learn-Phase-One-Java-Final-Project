@@ -10,7 +10,7 @@ public class LockedMeMain {
 	 
 	 static final String folderPath="E:\\My File Folder";
 	 static int choice=0;
-	 static  Scanner sc=new Scanner(System.in);	 
+	 static  Scanner sc=null; 
      static String errorMsg="Something wrong happened please contact admin@sachin.com";
      
 	
@@ -18,13 +18,13 @@ public class LockedMeMain {
  //main method	
 	public static void main(String[] args) {
 	
-		
+		 sc=new Scanner(System.in);	
 		// Do while loop for displaying the user menu again and again
 		do {
 		     displayMenu();
 		     try {
 		     System.out.println("Enter Your Choice : ");
-		     choice=Integer.parseInt(sc.nextLine());
+		     choice=sc.nextInt();
 		     }catch(Exception ex) {
 		    	 System.out.println("Only Numbers  allowed  ");
 		    	 break;
@@ -136,7 +136,7 @@ public class LockedMeMain {
 
 //function for deleting the file 	
 	private static void deleteFile() {
-	
+//		  Scanner sc=new Scanner(System.in);	
 	      String fname;
 			
 			try {
@@ -161,6 +161,7 @@ public class LockedMeMain {
 
 
 		private static void addNewFile() {
+//		    Scanner sc=new Scanner(System.in);
 			String fName;
 			int noOfLines=0;
 			try {
